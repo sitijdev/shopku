@@ -1,0 +1,17 @@
+{
+  "name": "shopee-scraper",
+  "version": "1.0.0",
+  "description": "Scrape data from Shopee.co.id",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": 1  {
+    "axios": "^1.7.8",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^23.9.0"
+  }
+}
