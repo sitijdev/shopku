@@ -1,0 +1,31 @@
+name: Scrape Shopee
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Jalankan setiap jam
+  workflow_dispatch:  # Tambahkan trigger ini
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run scraper
+      run: node index.js > data.json
+
+    - name: Upload data
+      uses: actions/upload-artifact@v3
+      with:
+        name: shopee-data
+        path: data.json
